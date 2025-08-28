@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import ThemeProviderWithToggle from '../components/mui-theme-provider';
 import { ReactNode } from "react";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Senior Test Engineer Portfolio",
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Toaster />
         <ThemeProviderWithToggle>
           {children}
         </ThemeProviderWithToggle>

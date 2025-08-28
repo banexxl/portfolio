@@ -13,12 +13,15 @@
     "@mui/material": "latest",
     "@mui/material-pigment-css": "latest",
     "next": "15.2.4",
+    "nodemailer": "^7.0.5",
     "react": "^19",
     "react-dom": "^19",
+    "react-hot-toast": "^2.6.0",
     "zod": "3.25.67"
   },
   "devDependencies": {
     "@types/node": "^22",
+    "@types/nodemailer": "^7.0.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "typescript": "^5"

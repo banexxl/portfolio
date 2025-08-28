@@ -34,6 +34,7 @@ import {
   LightMode,
   DarkMode,
 } from "@mui/icons-material"
+import toast from "react-hot-toast"
 import ThemeSwitchButtonInline from '../components/ThemeSwitchButtonInline';
 import FloatingActions from '../components/FloatingActions';
 
@@ -63,11 +64,28 @@ export default function Portfolio() {
     message: "",
   })
 
-  const handleContactSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    alert("Contact form submitted - connect to your email service")
-    setContactForm({ name: "", email: "", message: "" })
+  const [formStatus, setFormStatus] = useState<null | 'success' | 'error'>(null);
+  const handleContactSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setFormStatus(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contactForm),
+      });
+      if (res.ok) {
+        setFormStatus('success');
+        setContactForm({ name: '', email: '', message: '' });
+        toast.success('Message sent successfully!');
+      } else {
+        setFormStatus('error');
+        toast.error('Failed to send message.');
+      }
+    } catch {
+      setFormStatus('error');
+      toast.error('Failed to send message.');
+    }
   }
 
   return (
@@ -251,6 +269,16 @@ export default function Portfolio() {
                 <Button type="submit" variant="contained" size="large" startIcon={<Send />} sx={{ mt: 2 }}>
                   Send Message
                 </Button>
+                {formStatus === 'success' && (
+                  <Typography color="success.main" sx={{ mt: 2 }}>
+                    Message sent successfully!
+                  </Typography>
+                )}
+                {formStatus === 'error' && (
+                  <Typography color="error.main" sx={{ mt: 2 }}>
+                    Failed to send message. Please try again later.
+                  </Typography>
+                )}
               </Box>
             </Paper>
           </Grid>
