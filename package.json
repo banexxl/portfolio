@@ -1,0 +1,26 @@
+{
+  "name": "my-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@mui/material-pigment-css": "latest",
+    "next": "15.2.4",
+    "react": "^19",
+    "react-dom": "^19",
+    "zod": "3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
