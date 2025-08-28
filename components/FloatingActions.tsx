@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Fab, Zoom } from "@mui/material";
 import { Phone, Email, Download, Menu, Close } from "@mui/icons-material";
 
 export default function FloatingActions() {
      const [open, setOpen] = useState(false);
-     const trigger = typeof window !== 'undefined' && window.scrollY > 100;
+     const [trigger, setTrigger] = useState(false);
+
+     useEffect(() => {
+          const handleScroll = () => {
+               setTrigger(window.scrollY > 50);
+          };
+
+          window.addEventListener("scroll", handleScroll);
+          handleScroll(); // run once on mount
+          return () => window.removeEventListener("scroll", handleScroll);
+     }, []);
 
      const handleDownloadCV = () => {
           const link = document.createElement("a");
-          link.href = "/cv.pdf"; // CV file should be placed in public folder
+          link.href = "/cv.pdf"; // CV file should be in public folder
           link.download = "Senior_Test_Engineer_CV.pdf";
           document.body.appendChild(link);
           link.click();
@@ -25,22 +35,50 @@ export default function FloatingActions() {
      };
 
      return (
-          <Box sx={{ position: "fixed", left: 16, top: "50%", transform: "translateY(-50%)", zIndex: 1000 }}>
-               <Zoom in={trigger}>
+          <Box
+               sx={{
+                    position: "fixed",
+                    left: 16,
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    zIndex: 1000,
+               }}
+          >
+               <Zoom in={trigger} style={{ transitionDelay: trigger ? "300ms" : "0ms" }}>
                     <Box>
-                         <Fab color="primary" size="medium" onClick={() => setOpen(!open)} sx={{ mb: 1 }}>
+                         <Fab
+                              color="primary"
+                              size="medium"
+                              onClick={() => setOpen(!open)}
+                              sx={{ mb: 1 }}
+                         >
                               {open ? <Close /> : <Menu />}
                          </Fab>
 
                          <Zoom in={open}>
                               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                                   <Fab color="secondary" size="small" onClick={handleCall} title="Call me">
+                                   <Fab
+                                        color="secondary"
+                                        size="small"
+                                        onClick={handleCall}
+                                        title="Call me"
+                                   >
                                         <Phone />
                                    </Fab>
-                                   <Fab color="secondary" size="small" onClick={handleDownloadCV} title="Download CV">
+                                   <Fab
+                                        color="secondary"
+                                        size="small"
+                                        onClick={handleDownloadCV}
+                                        title="Download CV"
+                                   >
                                         <Download />
                                    </Fab>
-                                   <Fab color="secondary" size="small" onClick={handleEmail} title="Send email">
+                                   <Fab
+                                        color="secondary"
+                                        size="small"
+                                        onClick={handleEmail}
+                                        title="Send email"
+                                   >
                                         <Email />
                                    </Fab>
                               </Box>

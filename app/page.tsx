@@ -16,9 +16,6 @@ import {
   IconButton,
   TextField,
   Paper,
-  Fab,
-  Zoom,
-  useScrollTrigger,
   Divider,
 } from "@mui/material";
 import {
@@ -128,7 +125,7 @@ export default function Portfolio() {
             alt="Profile"
           />
           <Typography variant="h1" component="h1" gutterBottom sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" } }}>
-            Your Name Here
+            Branislav Damjanović
           </Typography>
           <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 400, opacity: 0.9 }}>
             Senior Test Engineer
@@ -180,12 +177,12 @@ export default function Portfolio() {
             About Me
           </Typography>
           <Paper elevation={1} sx={{ p: 4 }}>
-            <Typography variant="body1" paragraph sx={{ fontSize: "1.1rem", lineHeight: 1.7 }}>
+            <Typography variant="body1" sx={{ fontSize: "1.1rem", lineHeight: 1.7 }}>
               As a Senior Test Engineer with extensive experience in modern testing frameworks, I specialize in creating
               robust automated testing solutions that ensure software quality and reliability. My expertise spans across
               multiple testing tools and technologies, with a focus on end-to-end testing using Cypress and Playwright.
             </Typography>
-            <Typography variant="body1" paragraph sx={{ fontSize: "1.1rem", lineHeight: 1.7 }}>
+            <Typography variant="body1" sx={{ fontSize: "1.1rem", lineHeight: 1.7 }}>
               I have worked with diverse technology stacks including JavaScript, TypeScript, React, and Next.js,
               combined with various database systems like MySQL, PostgreSQL, and MongoDB. My approach emphasizes
               comprehensive test coverage, maintainable test code, and seamless integration with CI/CD pipelines.
