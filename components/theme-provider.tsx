@@ -27,20 +27,20 @@ const createAppTheme = (mode: ThemeMode) =>
     palette: {
       mode,
       primary: {
-        main: "#164e63", // cyan-800
+        main: "#2a32c3ff", // cyan-800
         contrastText: "#ffffff",
       },
       secondary: {
-        main: "#8b5cf6", // purple-500
+        main: "#0b1358ff", // purple-500
         contrastText: "#ffffff",
       },
       background: {
-        default: mode === "light" ? "#ffffff" : "#121212",
-        paper: mode === "light" ? "#ecfeff" : "#1e1e1e",
+        default: mode === "light" ? "#b5faf6ff" : "#026868ff",
+        paper: mode === "light" ? "#a5fbffff" : "#290e80ff",
       },
       text: {
-        primary: mode === "light" ? "#475569" : "#ffffff",
-        secondary: mode === "light" ? "#64748b" : "#b3b3b3",
+        primary: mode === "light" ? "#cbdffbff" : "#000000ff",
+        secondary: mode === "light" ? "#a8bfdfff" : "#000000ff",
       },
     },
     typography: {

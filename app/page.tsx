@@ -17,6 +17,7 @@ import {
   TextField,
   Paper,
   Divider,
+  useTheme,
 } from "@mui/material";
 import {
   Phone,
@@ -55,6 +56,9 @@ const techStack = [
 
 // Portfolio component
 export default function Portfolio() {
+
+  const theme = useTheme();
+
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
@@ -86,11 +90,11 @@ export default function Portfolio() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, bgcolor: theme.palette.primary.main, color: theme.palette.text.primary, minHeight: "100vh" }}>
       {/* Header */}
-      <AppBar position="static" elevation={0}>
+      <AppBar position="static" elevation={0} sx={{ bgcolor: theme.palette.primary.main, color: theme.palette.primary.contrastText }}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
             Senior Test Engineer
           </Typography>
           <ThemeSwitchButtonInline />
@@ -106,8 +110,8 @@ export default function Portfolio() {
       {/* Hero Section */}
       <Box
         sx={{
-          background: "linear-gradient(135deg, #164e63 0%, #0891b2 100%)",
-          color: "white",
+          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          color: theme.palette.primary.contrastText,
           py: 8,
           textAlign: "center",
         }}
@@ -171,12 +175,12 @@ export default function Portfolio() {
       </Container>
 
       {/* About Section */}
-      <Box sx={{ bgcolor: "background.paper", py: 8 }}>
+      <Box sx={{ bgcolor: theme.palette.background.paper, py: 8 }}>
         <Container maxWidth="md">
           <Typography variant="h2" component="h2" gutterBottom textAlign="center" sx={{ mb: 6 }}>
             About Me
           </Typography>
-          <Paper elevation={1} sx={{ p: 4 }}>
+          <Paper elevation={1} sx={{ p: 4, bgcolor: theme.palette.background.default, color: theme.palette.text.primary }}>
             <Typography variant="body1" sx={{ fontSize: "1.1rem", lineHeight: 1.7 }}>
               As a Senior Test Engineer with extensive experience in modern testing frameworks, I specialize in creating
               robust automated testing solutions that ensure software quality and reliability. My expertise spans across
@@ -203,7 +207,7 @@ export default function Portfolio() {
         </Typography>
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Paper elevation={1} sx={{ p: 3, height: "100%" }}>
+            <Paper elevation={1} sx={{ p: 3, height: "100%", bgcolor: theme.palette.background.default, color: theme.palette.text.primary }}>
               <Typography variant="h5" gutterBottom>
                 Contact Information
               </Typography>
@@ -231,7 +235,7 @@ export default function Portfolio() {
             </Paper>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Paper elevation={1} sx={{ p: 3 }}>
+            <Paper elevation={1} sx={{ p: 3, bgcolor: theme.palette.background.default, color: theme.palette.text.primary }}>
               <Typography variant="h5" gutterBottom>
                 Send Message
               </Typography>
@@ -283,12 +287,12 @@ export default function Portfolio() {
       </Container>
 
       {/* Google Maps Section */}
-      <Box sx={{ bgcolor: "background.paper", py: 6 }}>
+      <Box sx={{ bgcolor: theme.palette.background.paper, py: 6 }}>
         <Container maxWidth="lg">
           <Typography variant="h2" component="h2" gutterBottom textAlign="center" sx={{ mb: 4 }}>
             Location
           </Typography>
-          <Paper elevation={2} sx={{ height: 400, overflow: "hidden" }}>
+          <Paper elevation={2} sx={{ height: 400, overflow: "hidden", bgcolor: theme.palette.background.default }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46302.658683158004!2d19.793909!3d45.267136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b108a1b49c5b7%3A0x40b82c3688b9460!2sNovi%20Sad%2C%20Serbia!5e0!3m2!1sen!2sus!4v1234567890123"
               width="100%"
@@ -304,7 +308,7 @@ export default function Portfolio() {
       </Box>
 
       {/* Footer */}
-      <Box sx={{ bgcolor: "primary.main", color: "white", py: 4, mt: 8 }}>
+      <Box sx={{ bgcolor: theme.palette.primary.main, color: theme.palette.primary.contrastText, py: 4, mt: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="body2" textAlign="center">
             © 2024 Senior Test Engineer Portfolio. Built with Next.js and Material-UI.
