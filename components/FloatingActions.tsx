@@ -26,7 +26,7 @@ export default function FloatingActions() {
      };
 
      const handleCall = () => {
-          window.location.href = "tel:+381123456789";
+          window.location.href = "tel:+381 66 415651";
      };
 
      const handleEmail = () => {
