@@ -311,7 +311,7 @@ export default function Portfolio() {
       <Box sx={{ bgcolor: theme.palette.primary.main, color: theme.palette.primary.contrastText, py: 4, mt: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="body2" textAlign="center">
-            © 2024 Senior Test Engineer Portfolio. Built with Next.js and Material-UI.
+            © 2024 Test Engineer Portfolio. Built with Next.js and Material-UI.
           </Typography>
         </Container>
       </Box>

@@ -18,8 +18,8 @@ export default function FloatingActions() {
 
      const handleDownloadCV = () => {
           const link = document.createElement("a");
-          link.href = "/cv.pdf"; // CV file should be in public folder
-          link.download = "Senior_Test_Engineer_CV.pdf";
+          link.href = "/en_Branislav_Damjanovic_CV.pdf"; // CV file should be in public folder
+          link.download = "en_Branislav_Damjanovic_CV.pdf";
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
