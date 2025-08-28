@@ -11,7 +11,6 @@ export async function sendMail({ to, from, subject, text, html }: { to: string; 
                pass: process.env.SMTP_PASS,
           },
      });
-     console.log('Transporter created:', process.env.SMTP_PASS);
 
      // Send mail with defined transport object
      const info = await transporter.sendMail({
@@ -21,7 +20,5 @@ export async function sendMail({ to, from, subject, text, html }: { to: string; 
           text,
           html,
      });
-     console.log('Email sent:', info);
-
      return info;
 }

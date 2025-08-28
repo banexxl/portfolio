@@ -16,7 +16,6 @@ export async function POST(req: NextRequest) {
                text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
                html: `<p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b> ${message}</p>`
           });
-          console.log('info', NextResponse.json);
 
           return NextResponse.json({ success: true });
      } catch (error) {
