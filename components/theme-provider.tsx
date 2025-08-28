@@ -36,7 +36,7 @@ const createAppTheme = (mode: ThemeMode) =>
       },
       background: {
         default: mode === "light" ? "#b5faf6ff" : "#026868ff",
-        paper: mode === "light" ? "#a5fbffff" : "#290e80ff",
+        paper: mode === "light" ? "#a5fbffff" : "#3a1dcdff",
       },
       text: {
         primary: mode === "light" ? "#cbdffbff" : "#000000ff",

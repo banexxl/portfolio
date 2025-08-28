@@ -92,7 +92,7 @@ export default function Portfolio() {
   return (
     <Box sx={{ flexGrow: 1, bgcolor: theme.palette.primary.main, color: theme.palette.text.primary, minHeight: "100vh" }}>
       {/* Header */}
-      <AppBar position="static" elevation={0} sx={{ bgcolor: theme.palette.primary.main, color: theme.palette.primary.contrastText }}>
+      <AppBar position="static" elevation={0} sx={{ bgcolor: theme.palette.primary.main }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
             Senior Test Engineer
