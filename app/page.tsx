@@ -289,9 +289,10 @@ export default function Portfolio() {
       {/* Google Maps Section */}
       <Box sx={{ bgcolor: theme.palette.background.paper, py: 6 }}>
         <Container maxWidth="lg">
-          <Typography variant="h2" component="h2" gutterBottom textAlign="center" sx={{ mb: 4 }}>
-            Location
-          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+            <LocationOn sx={{ mr: 2, color: "primary.main", fontSize: { xs: 36, md: 48 } }} />
+            <Typography sx={{ fontSize: { xs: "1.5rem", md: "2rem" } }}>Novi Sad, Serbia</Typography>
+          </Box>
           <Paper elevation={2} sx={{ height: 400, overflow: "hidden", bgcolor: theme.palette.background.default }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46302.658683158004!2d19.793909!3d45.267136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b108a1b49c5b7%3A0x40b82c3688b9460!2sNovi%20Sad%2C%20Serbia!5e0!3m2!1sen!2sus!4v1234567890123"
