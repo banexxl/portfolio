@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "Senior Test Engineer Portfolio",
+  title: "Senior Test Engineer | Cypress | Playwright | QA Automation",
   description:
     "Professional portfolio of a Senior Test Engineer specializing in Cypress, Playwright, and modern testing frameworks",
 }
