@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Fab, Zoom } from "@mui/material";
+import { Box, Fab, Tooltip, Zoom } from "@mui/material";
 import { Phone, Email, Download, Menu, Close } from "@mui/icons-material";
 
 export default function FloatingActions() {
@@ -57,30 +57,33 @@ export default function FloatingActions() {
 
                          <Zoom in={open}>
                               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                                   <Fab
-                                        color="secondary"
-                                        size="small"
-                                        onClick={handleCall}
-                                        title="Call me"
-                                   >
-                                        <Phone />
-                                   </Fab>
-                                   <Fab
-                                        color="secondary"
-                                        size="small"
-                                        onClick={handleDownloadCV}
-                                        title="Download CV"
-                                   >
-                                        <Download />
-                                   </Fab>
-                                   <Fab
-                                        color="secondary"
-                                        size="small"
-                                        onClick={handleEmail}
-                                        title="Send email"
-                                   >
-                                        <Email />
-                                   </Fab>
+                                   <Tooltip title="Call me" placement="right">
+                                        <Fab
+                                             color="secondary"
+                                             size="small"
+                                             onClick={handleCall}
+                                        >
+                                             <Phone />
+                                        </Fab>
+                                   </Tooltip>
+                                   <Tooltip title="Download CV" placement="right">
+                                        <Fab
+                                             color="secondary"
+                                             size="small"
+                                             onClick={handleDownloadCV}
+                                        >
+                                             <Download />
+                                        </Fab>
+                                   </Tooltip>
+                                   <Tooltip title="Send email" placement="right">
+                                        <Fab
+                                             color="secondary"
+                                             size="small"
+                                             onClick={handleEmail}
+                                        >
+                                             <Email />
+                                        </Fab>
+                                   </Tooltip>
                               </Box>
                          </Zoom>
                     </Box>
