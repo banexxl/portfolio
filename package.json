@@ -9,21 +9,22 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mui/icons-material": "latest",
-    "@mui/material": "latest",
-    "@mui/material-pigment-css": "latest",
-    "next": "15.2.4",
+    "@mui/icons-material": "^7.3.6",
+    "@mui/material": "^7.3.6",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "next": "^15.5.9",
     "nodemailer": "^7.0.5",
-    "react": "^19",
-    "react-dom": "^19",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-hot-toast": "^2.6.0",
     "zod": "3.25.67"
   },
   "devDependencies": {
     "@types/node": "^22",
     "@types/nodemailer": "^7.0.1",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "typescript": "^5"
   }
 }
